@@ -1,4 +1,5 @@
 import { Component } from "react";
+//import deleteIMG from '../../public/productos/deleteIMG.svg'
 
 const styles={
     detallesCarro:{ 
@@ -15,8 +16,6 @@ const styles={
     ul:{
         margin: 0,
         padding: 0,
-        
-
     },
 
     producto:{
@@ -26,8 +25,17 @@ const styles={
         alignItems: 'center',
         padding: '25px 25px',
         borderBottom: 'solid 1px #aaa',
+    },
 
+    buttonRestar:{
+        backgroundColor: '#FFD54F',
+        border: 'none',
+        borderRadius: '2px',
+    },
 
+    buttonClose: {
+        backgroundColor: 'tomato',
+        border: 'none',
     }
 }
 
@@ -42,6 +50,9 @@ class DetallesCarro extends Component{
                     <li style={styles.producto} key={x.name}>
                     <img alt= {x.name} src={x.img} width= '50' height= '32' />
                     {x.name} <span>{x.cantidad}</span>
+                    <button style={styles.buttonRestar}>+</button>
+                    <button style={styles.buttonRestar}>-</button>
+                    <button style={styles.buttonClose}>x</button>
                     </li>
                     )}
                 </ul>
